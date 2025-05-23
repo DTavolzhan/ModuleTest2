@@ -8,3 +8,7 @@ class CategoryModelTest(TestCase):
         self.assertIsInstance(category, Category)
         self.assertEqual(str(category), "Landscape")
 
+class ImageModelTest(TestCase):
+    def setUp(self):
+        self.category1 = Category.objects.create(name="Portrait")
+        self.category2 = Category.objects.create(name="Abstract")
