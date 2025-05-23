@@ -1,3 +1,10 @@
 from django.test import TestCase
+from .models import Category, Image
 
-# Create your tests here.
+class CategoryModelTest(TestCase):
+    def test_create_category(self):
+        category = Category.objects.create(name="Landscape")
+        self.assertEqual(category.name, "Landscape")
+        self.assertIsInstance(category, Category)
+        self.assertEqual(str(category), "Landscape")
+
