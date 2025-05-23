@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  test:
+  bild:
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +40,7 @@ jobs:
         run: python manage.py test
 
   deploy:
-    needs: test
+    needs: bild
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && success()
 
